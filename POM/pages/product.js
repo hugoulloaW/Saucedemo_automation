@@ -35,6 +35,6 @@ exports.ProductPage = class ProductPage {
     async logout(){
         await this.menuIcon.click();
         await this.logoutBtn.click();
-        await expect(this.page).toHaveURL(url)
+        await expect(this.page).toHaveURL('https://www.saucedemo.com/')
     }
 }
