@@ -18,7 +18,10 @@ jobs:
       run: npm ci
 
     - name: Create .env file
-      run: echo "SAUCEDEMOURL=${{ secrets.SAUCEDEMOURL}}" > .env
+      run: |
+          echo "SAUCEDEMOURL=${{ secrets.SAUCEDEMOURL}}" > .env
+          echo "SAUCEDEMOUSER=${{ secrets.SAUCEDEMOUSER}}" >> .env
+          echo "SAUCEDEMOPASS=${{ secrets.SAUCEDEMOPASS}}" >> .env 
 
     - name: Verify .env file
       run: cat .env

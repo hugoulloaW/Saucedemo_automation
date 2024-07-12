@@ -27,3 +27,6 @@ Automated Test Cases
 
 ## Logout
 1. Verify user can logout from the application successfully
+
+## E2E
+1. Verify the full process of the page; login, choose product and add it to the cart, checkout process and logout
