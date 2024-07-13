@@ -26,13 +26,13 @@ exports.ProductPage = class ProductPage {
         await this.shoppingCartIcon.click();
     }
 
-    async addBikeProduct(){
+    async addBikeProduct() {
         await this.bikeAddToCartBtn.click();
         await this.bikeTitle.waitFor();
         await expect(this.bikeTitle).toHaveText('Sauce Labs Bike Light');
     }
 
-    async logout(){
+    async logout() {
         await this.menuIcon.click();
         await this.logoutBtn.click();
         await expect(this.page).toHaveURL('https://www.saucedemo.com/')

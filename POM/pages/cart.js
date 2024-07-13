@@ -1,9 +1,9 @@
 import { expect } from "@playwright/test";
-exports.ShoppingCartPage= class ShoppingCartPage{
+exports.ShoppingCartPage = class ShoppingCartPage {
 
-    constructor(page){
-        this.page=page;
-        this.checkoutBtn= page.locator('#checkout');
+    constructor(page) {
+        this.page = page;
+        this.checkoutBtn = page.locator('#checkout');
         this.backPackTitleName = page.locator('#item_4_title_link');
         this.bikeTitleName = page.locator('#item_0_title_link');
 
@@ -12,20 +12,20 @@ exports.ShoppingCartPage= class ShoppingCartPage{
     }
 
 
-    async validatingTheAddedProduct(){
+    async validatingTheAddedProduct() {
         await expect(this.backPackTitleName).toContainText("Sauce Labs Backpack");
 
     }
 
-    async checkoutProduct(){
+    async checkoutProduct() {
         await this.checkoutBtn.click();
     }
 
-    async validatingAddedBikeTitle(){
+    async validatingAddedBikeTitle() {
         await expect(this.bikeTitleName).toHaveText("Sauce Labs Bike Light");
     }
 
-    async removeProduct(){
+    async removeProduct() {
         await this.removeProductBtn.click();
     }
 
