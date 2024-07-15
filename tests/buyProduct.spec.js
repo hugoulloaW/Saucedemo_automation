@@ -2,7 +2,7 @@ import {test} from '@playwright/test';
 const { LoginPage } = require( '../POM/pages/login');
 const { ProductPage } = require( '../POM/pages/product');
 const { ShoppingCartPage } = require('../POM/pages/cart');
-const { YourInformationPage } = require('../POM/pages/yourInformation');
+const { YourInformationPage } = require('../POM/pages/yourinformation');
 const { CheckoutPage } = require('../POM/pages/checkout');
 const {CheckoutCompletePage} = require('../POM/pages/chekoutcomplete');
 import { URLS, CREDENTIALS, PERSONALDATA } from '../POM/data/constant';
