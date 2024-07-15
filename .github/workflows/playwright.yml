@@ -22,6 +22,9 @@ jobs:
           echo "SAUCEDEMOURL=${{ secrets.SAUCEDEMOURL}}" > .env
           echo "SAUCEDEMOUSER=${{ secrets.SAUCEDEMOUSER}}" >> .env
           echo "SAUCEDEMOPASS=${{ secrets.SAUCEDEMOPASS}}" >> .env 
+          echo "SAUCEDEMOLOCKEDUSER=${{ secrets.SAUCEDEMOLOCKEDUSER}}" >> .env
+          echo "SAUCEDEMOGLITCH=${{ secrets.SAUCEDEMOGLITCH}}" >> .env
+          echo "SAUCEDEMOPROBLEMUSER=${{ secrets.SAUCEDEMOPROBLEMUSER}}" >> .env
 
     - name: Verify .env file
       run: cat .env
