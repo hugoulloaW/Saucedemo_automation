@@ -25,6 +25,9 @@ jobs:
           echo "SAUCEDEMOLOCKEDUSER=${{ secrets.SAUCEDEMOLOCKEDUSER}}" >> .env
           echo "SAUCEDEMOGLITCH=${{ secrets.SAUCEDEMOGLITCH}}" >> .env
           echo "SAUCEDEMOPROBLEMUSER=${{ secrets.SAUCEDEMOPROBLEMUSER}}" >> .env
+          echo "FIRSTNAME=${{ secrets.FIRSTNAME}}" >> .env
+          echo "LASTNAME=${{ secrets.LASTNAME}}" >> .env
+          echo "POSTALCODE=${{ secrets.POSTALCODE}}" >> .env
 
     - name: Verify .env file
       run: cat .env

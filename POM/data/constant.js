@@ -13,3 +13,10 @@ export const CREDENTIALS = {
     SAUCEDEMOPROBLEMUSER: process.env.SAUCEDEMOPROBLEMUSER,
     SAUCEDEMOGLITCH: process.env.SAUCEDEMOGLITCH
 }
+
+export const PERSONALDATA = {
+    FIRSTNAME: process.env.FIRSTNAME,
+    LASTNAME: process.env.LASTNAME,
+    POSTALCODE: process.env.POSTALCODE
+
+}
