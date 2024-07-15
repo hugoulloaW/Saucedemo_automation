@@ -14,32 +14,35 @@ exports.YourInformationPage = class YourInformationPage {
     }
 
     async fillPersonalDetails(firstName, lastName, postalCode) {
-        await this.firstName.fill(firstName);
-        await this.lastName.fill(lastName);
-        await this.postCode.fill(postalCode);
+        if(firstName != null){
+            await this.firstName.fill(firstName);
+        }
+        if(lastName != null){
+            await this.lastName.fill(lastName);
+        }
+        if(postalCode != null){
+            await this.postCode.fill(postalCode);     
+        }
+       
     }
 
     async clickContinue() {
         await this.continue.click();
     }
 
-    async verifyingFirstNameEmpty(lastName, postalCode) {
-        await this.lastName.fill(lastName);
-        await this.postCode.fill(postalCode);
+    async verifyingFirstNameEmpty() {
         await this.continue.click();
         await expect(this.errorMessage).toContainText("Error: First Name is required");
 
     }
 
-    async verifyingLastNameEmpty(firstName, postalCode) {
-        await this.firstName.fill(firstName);
-        await this.postCode.fill(postalCode);
+    async verifyingLastNameEmpty() {
+       
         await this.continue.click();
         await expect(this.errorMessage).toContainText("Error: Last Name is required");
     }
-    async verifyingPostCodeEmpty(firstName, lastName) {
-        await this.firstName.fill(firstName);
-        await this.lastName.fill(lastName);
+    async verifyingPostCodeEmpty() {
+       
         await this.continue.click();
         await expect(this.errorMessage).toContainText("Error: Postal Code is required");
 

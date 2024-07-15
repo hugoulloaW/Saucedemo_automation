@@ -28,17 +28,20 @@ test.beforeEach(async({page})=>{
 test("Verifying the First Name field cannot be empty",async({page})=>{
 
     const YourInforObj= new YourInformationPage(page);
-    await YourInforObj.verifyingFirstNameEmpty(PERSONALDATA.LASTNAME,PERSONALDATA.POSTALCODE);
+    await YourInforObj.fillPersonalDetails(null,PERSONALDATA.LASTNAME,PERSONALDATA.POSTALCODE);
+    await YourInforObj.verifyingFirstNameEmpty();
 })
 
 test("Verifying the Last Name field cannot be empty",async({page})=>{
     const YourInforObj = new YourInformationPage(page);
-    await YourInforObj.verifyingLastNameEmpty(PERSONALDATA.FIRSTNAME,PERSONALDATA.POSTALCODE);
+    await YourInforObj.fillPersonalDetails(PERSONALDATA.FIRSTNAME,null,PERSONALDATA.POSTALCODE);
+    await YourInforObj.verifyingLastNameEmpty();
 })
 
 test("Verifying the Postal code cannot be empty",async({page})=>{
     const YourInforObj = new YourInformationPage(page);
-    await YourInforObj.verifyingPostCodeEmpty(PERSONALDATA.FIRSTNAME,PERSONALDATA.LASTNAME);
+    await YourInforObj.fillPersonalDetails(PERSONALDATA.FIRSTNAME,PERSONALDATA.LASTNAME, null);
+    await YourInforObj.verifyingPostCodeEmpty();
 })
 
 
