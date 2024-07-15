@@ -52,3 +52,21 @@ test('Verify user cannot login to the application with a incorrect password', as
 
     await Login.verifyIncorrectUserNameErrorMessage();
 });
+
+test('Verify user cannot login to application with a null user name', async ({ page }) => {
+
+    await page.goto(URLS.SAUCEDEMOURL);
+    const Login = new LoginPage(page);
+
+    await Login.login(null, CREDENTIALS.SAUCEDEMOPASS);
+    await Login.verifyUsernameMessage();
+
+});
+
+test('Verify user cannot login to the application with a null password', async ({ page }) => {
+    await page.goto(URLS.SAUCEDEMOURL);
+    const Login = new LoginPage(page);
+    Login.login(CREDENTIALS.SAUCEDEMOUSER, null);
+
+    await Login.verifyPassMessage();
+});

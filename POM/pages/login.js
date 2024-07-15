@@ -12,8 +12,12 @@ exports.LoginPage = class LoginPage {
     }
 
     async login(username, password) {
-        await this.userName.fill(username);
-        await this.password.fill(password);
+        if(username != null){
+            await this.userName.fill(username);      
+        }
+        if(password != null){
+            await this.password.fill(password);
+        }
         await this.loginBtn.click();
     }
 
@@ -29,5 +33,13 @@ exports.LoginPage = class LoginPage {
 
     async verifyIncorrectUserNameErrorMessage() {
         await expect(this.lockedOutUserError).toContainText('Epic sadface: Username and password do not match any user in this service');
+    }
+
+    async verifyUsernameMessage() {
+        await expect(this.lockedOutUserError).toContainText('Epic sadface: Username is required')
+    }
+
+    async verifyPassMessage() {
+        await expect(this.lockedOutUserError).toContainText('Epic sadface: Password is required')
     }
 }

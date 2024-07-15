@@ -14,6 +14,8 @@ Automated Test Cases
 3. Verify probelm_usuer can login to the application
 4. Verify performance_glitch_user can login to the applicaiton
 5. Verify user cannnot login to the application with the username & password
+6. Verify user cannot login to application with a null user name'
+7. Verify user cannot login to the application with a null password
 
 ## Product Cart / Checkout Process
 1. Verify user can purchase a single product at one time from the app successfully
